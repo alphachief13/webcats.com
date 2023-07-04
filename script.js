@@ -11,11 +11,10 @@ const $imagemTelaCheia = document.querySelector("#imagem-tela-cheia");
 const $colecaoImagensFavoritas = document.querySelector(".collection");
 
 
-const fotosFavoritadas = [];
+let fotosFavoritadas = [];
 let pagina1 = true;
 let coracaoClicado = false;
 let urlImagemPrincipalAtual = $imagemPrincipal.src;
-
 const urlDaApi = "https://api.thecatapi.com/v1/images/search";
 
 function mudarImagemPrincipal(urlDaImagem){
@@ -99,6 +98,8 @@ function adicionarFotoNaColecaoDeFavoritos(){
         }   
         $colecaoImagensFavoritas.appendChild(img);
     }
+    localStorage.setItem("urls", JSON.stringify(fotosFavoritadas));
+
 }
 
 function verImagem(){
@@ -112,12 +113,20 @@ function voltarAoNormal(){
 }
 
 function transferirImagemParaTelaCheia(imagem){
-    console.log(imagem.src);
     $imagemTelaCheia.src = imagem.src;
 
+}
+
+function carregarFotosFavoritadas(){
+    const urls = localStorage.getItem("urls");
+    if (urls) {
+        fotosFavoritadas = JSON.parse(urls);
+        adicionarFotoNaColecaoDeFavoritos();
+    }
 }
 
 $efeitoTransparente.addEventListener("click", voltarAoNormal);
 $coracaoIcon.addEventListener("click", interagirCoracaoIcon);
 
+carregarFotosFavoritadas()
 
