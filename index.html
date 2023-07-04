@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="shortcut icon" href="./images/gatito.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>webcats.com</title>
+</head>
+<body>
+    
+    <header>
+        <div class="header1">
+            <div class="container">
+                
+
+                <div class="titulo">
+                    <h1>webcats.com</h1>
+                </div>
+            
+                <div class="links">
+                    <a onclick="carregarFavoritos()" href="#">favoritos</a>
+                    <a href="https://github.com/alphachief13" target="_blank">meu github</a>
+                    <a href="#footer">sobre</a>
+                </div>
+    
+            </div>
+        </div>
+        <div class="header2">
+            <div class="container">
+                
+
+                <div class="titulo">
+                    <h1>webcats.com</h1>
+                </div>
+            
+                <div class="links">
+                    <a onclick="carregarPaginaPrincipal()" href="#">voltar</a>
+                </div>
+    
+            </div>
+        </div>
+
+    </header>
+
+    <section>
+        <div class="section1">
+            <div class="centralizar">
+                <img id="imagem-principal" src="images/gatito.jpg" alt="gatinho-sapeca">
+        
+                <div class="container2">
+                    <button id="btn-gera-gato" onclick="gerarGatinho()">gerar gatinho</button>
+                    <span id="coracao-favorito" class="material-symbols-outlined">favorite</span>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="section2">
+
+            <h1>
+                <span class="material-symbols-outlined">favorite</span>
+                gatinhos favoritos
+                <span class="material-symbols-outlined">favorite</span>
+            </h1>
+
+            <div class="centraliza">
+                <h2>*clique para ver as fofuras de perto*</h2>
+            </div>
+            
+
+            <div class="centraliza">
+                <div id="fotos-favoritas" class="collection">
+
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <footer id="footer">
+        <div class="divisoria"></div>
+        <div class="container3">
+            <p>O webcats.com é um site gerador de gatinhos muito fofo e simples, que utiliza a <a id="link" target="_blank" href="https://thecatapi.com">the cat api</a>. Ele veio com o intuito educativo de ensinar para as pessoas um pouco de desenvolvimento web e óbvio, deixar todo mundo feliz com essas fofuras que são geradas aleatoriamente :3 </p>
+        </div>
+
+        <div class="container3">
+            <p>Se você quiser saber mais sobre este site e quer uma explicação, entre nesse vídeo aqui: <a id="link" href="#">meu vídeo</a></p>
+        </div>
+
+            
+    </footer>
+
+    <div class="efeito-transparente">
+    </div>
+    <div class="container-imagem-tela-cheia">
+        <img id="imagem-tela-cheia" src="images/gatito.jpg" alt="">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
