@@ -30,17 +30,17 @@ function gerarGatinho(){
         const objetoUrl = arrayJson[0].url;
         urlImagemPrincipalAtual = objetoUrl;
         mudarImagemPrincipal(objetoUrl);
-        atualizarCoracao()
-        console.log("Sucesso ao obter url: " + objetoUrl);
+        atualizarCoracao();
+        
     })
-    .catch(erro=>console.log("Erro ao obter imagem: " + erro))
+    .catch(erro=>console.log("Erro ao obter imagem: " + erro));
 }
 
 function likeCoracao(){
     coracaoClicado = true;
     $coracaoIcon.style.color = "red";
     fotosFavoritadas.push(urlImagemPrincipalAtual);
-    adicionarFotoNaColecaoDeFavoritos()
+    adicionarFotoNaColecaoDeFavoritos();
 
 }
 
@@ -48,28 +48,27 @@ function deslikeCoracao(){
     coracaoClicado = false;
     $coracaoIcon.style.color = "#EEEEEE";
     fotosFavoritadas.pop();
-    adicionarFotoNaColecaoDeFavoritos()
+    adicionarFotoNaColecaoDeFavoritos();
 
 }
 
 function atualizarCoracao(){
     coracaoClicado = false;
-    $coracaoIcon.style.color = "#EEEEEE";
-    console.log("Atualizou coração")
+    $coracaoIcon.style.color = "#EEEEEE";;
 }
 
 function interagirCoracaoIcon(){
-    if(!(coracaoClicado)){
-        likeCoracao()
+    if (!(coracaoClicado)){
+        likeCoracao();
         
-    } else if(coracaoClicado){
-        deslikeCoracao()
+    } else if (coracaoClicado){
+        deslikeCoracao();
     }
 }
 
 function carregarFavoritos(){
 
-    if(pagina1){
+    if (pagina1){
         pagina1 = false;
         $header1.style.display = "none";
         $section1.style.display = "none";
@@ -95,10 +94,10 @@ function adicionarFotoNaColecaoDeFavoritos(){
         const img = document.createElement("img")
         img.src = fotosFavoritadas[i]
         img.onclick = function(){
-            transferirImagemParaTelaCheia(this)
-            verImagem()
+            transferirImagemParaTelaCheia(this);
+            verImagem();
         }   
-        $colecaoImagensFavoritas.appendChild(img)
+        $colecaoImagensFavoritas.appendChild(img);
     }
 }
 
@@ -113,8 +112,8 @@ function voltarAoNormal(){
 }
 
 function transferirImagemParaTelaCheia(imagem){
-    console.log(imagem.src)
-    $imagemTelaCheia.src = imagem.src
+    console.log(imagem.src);
+    $imagemTelaCheia.src = imagem.src;
 
 }
 
